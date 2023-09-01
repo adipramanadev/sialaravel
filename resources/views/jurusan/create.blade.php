@@ -6,7 +6,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{route('jurusan.store')}}" method="POST">
+                            @csrf
+                            @method('POST')
                             <div class="form-group">
                                 <label for="">Nama Jurusan</label>
                                 <input type="text" name="nama" class="form-control">

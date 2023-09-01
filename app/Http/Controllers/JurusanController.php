@@ -31,7 +31,19 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate
+        $this->validate($request,[
+            'nama' => 'required',
+            'keterangan' => 'required'
+        ]);
+
+        //variable form
+        $input = $request->all();
+        //insert data
+        $save = Jurusan::create($input);
+
+        //redirect
+       dd($save);
     }
 
     /**
