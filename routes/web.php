@@ -18,4 +18,9 @@ Route::get('/', function () {
 });
 
 //rute jurusan
-Route::get('jurusan', [JurusanController::class, 'index']);
+Route::get('jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
+// Route::resource('jurusan', JurusanController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
