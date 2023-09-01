@@ -9,11 +9,22 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered">
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Jurusan</th>
-                                    <th>Action</th>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama Jurusan</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($jurusan as $item)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $item->nama }}</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>
