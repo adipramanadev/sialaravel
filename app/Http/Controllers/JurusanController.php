@@ -12,7 +12,10 @@ class JurusanController extends Controller
      */
     public function index()
     {
-        //
+        //variabel data
+        $data['jurusan'] = Jurusan::all();
+        //passing data to view
+        return view('jurusan.index', $data);
     }
 
     /**
