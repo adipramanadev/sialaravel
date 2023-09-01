@@ -43,7 +43,7 @@ class JurusanController extends Controller
         $save = Jurusan::create($input);
 
         //redirect
-       dd($save);
+        dd($save);
     }
 
     /**
