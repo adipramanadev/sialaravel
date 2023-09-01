@@ -36,7 +36,7 @@
                     <ul class="navbar-nav me-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">Jurusan</a>
+                            <a href="{{ route('jurusan.index') }}" class="nav-link">Jurusan</a>
                         </li>
                     </ul>
 
