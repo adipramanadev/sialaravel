@@ -15,8 +15,11 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $item->namajurusan }}</td>
             <td>{{ $item->keterangan }}</td>
-            <td>#</td>
+            <td><a href="#">Delete</a>
+            | <a href="#">Edit</a></td>
+    </tr>
         @empty
+        <tr
             <td colspan="4">Data Tidak Ada</td>
         @endforelse
     </tr>

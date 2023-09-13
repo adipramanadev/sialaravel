@@ -21,6 +21,8 @@ Route::get('/', function () {
 Route::get('jurusan',[App\Http\Controllers\JurusanController::class, 'index'])->name('jurusan.index');
 Route::get('create-jurusan',[App\Http\Controllers\JurusanController::class, 'create'])->name('jurusan.create');
 Route::post('store-jurusan',[App\Http\Controllers\JurusanController::class, 'store'])->name('jurusan.store');
+Route::get('delete-jurusan/{id}',[App\Http\Controllers\JurusanController::class, 'destroy'])->name('jurusan.destroy');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
