@@ -12,10 +12,10 @@ class JurusanController extends Controller
      */
     public function index()
     {
-        //variabel data
-        $data['jurusan'] = Jurusan::all();
-        //passing data to view
-        return view('jurusan.index', $data);
+        //buat variabel jurusan
+        $jurusan = Jurusan::all();
+        return view('jurusan.index', compact('jurusan'));
+
     }
 
     /**
@@ -31,19 +31,7 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //validate
-        $this->validate($request,[
-            'nama' => 'required',
-            'keterangan' => 'required'
-        ]);
-
-        //variable form
-        $input = $request->all();
-        //insert data
-        $save = Jurusan::create($input);
-
-        //redirect
-        dd($save);
+        //
     }
 
     /**

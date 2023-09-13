@@ -1,35 +1,24 @@
-@extends('layouts.app')
+<style>
+    table, td, tr{
+        border: 1px solid black
+    }
+</style>
+<table >
+    <tr>
+        <td>NO</td>
+        <td>Nama Jurusan</td>
+        <td>Keterangan</td>
+        <td>Aksi</td>
+    </tr>
+    <tr>
+        @forelse ($jurusan as $item)
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $item->nama_jurusan }}</td>
+            <td>{{ $item->keterangan }}</td>
+            <td>#</td>
+        @empty
+            <td colspan="4">Data Tidak Ada</td>
+        @endforelse
+    </tr>
 
-@section('content')
-    <div class="container">
-        <div class="row mt-4">
-            <div class="col-12">
-                <a href="{{ route('jurusan.create') }}" class="btn btn-primary">Tambah</a>
-                <div class="card mt-4">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Nama Jurusan</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($jurusan as $item)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->nama }}</td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-@endsection
+</table>
