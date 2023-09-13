@@ -15,5 +15,4 @@
             <td><button type="submit">Simpan</button></td>
         </tr>
     </table>
-
 </form>

@@ -15,7 +15,7 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $item->namajurusan }}</td>
             <td>{{ $item->keterangan }}</td>
-            <td><a href="#">Delete</a>
+            <td><a href="{{route('jurusan.destroy', $item->id)}}">Delete</a>
             | <a href="#">Edit</a></td>
     </tr>
         @empty

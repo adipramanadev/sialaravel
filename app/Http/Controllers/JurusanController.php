@@ -48,7 +48,7 @@ class JurusanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Jurusan $jurusan)
+    public function edit($id)
     {
         //
     }
@@ -64,8 +64,11 @@ class JurusanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Jurusan $jurusan)
+    public function destroy($id)
     {
-        //
+        //delete
+        $jurusan = Jurusan::find($id);
+        $jurusan->delete();
+        return redirect()->route('jurusan.index');
     }
 }
