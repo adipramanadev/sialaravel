@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 //rute jurusan
 Route::get('jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
+Route::get('jurusan/create', [JurusanController::class, 'create'])->name('jurusan.create');
+Route::post('jurusan', [JurusanController::class, 'store'])->name('jurusan.store');
 // Route::resource('jurusan', JurusanController::class);
 
 Auth::routes();
