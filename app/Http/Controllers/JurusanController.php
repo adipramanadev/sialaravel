@@ -31,7 +31,10 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //function store
+        $input = $request->all();
+        Jurusan::create($input);
+        return redirect()->route('jurusan.index');
     }
 
     /**
