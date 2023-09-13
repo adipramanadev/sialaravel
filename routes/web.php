@@ -18,11 +18,9 @@ Route::get('/', function () {
 });
 
 //rute jurusan
-Route::get('jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
-Route::get('jurusan/create', [JurusanController::class, 'create'])->name('jurusan.create');
-Route::post('jurusan', [JurusanController::class, 'store'])->name('jurusan.store');
-// Route::resource('jurusan', JurusanController::class);
-
+Route::get('jurusan',[App\Http\Controllers\JurusanController::class, 'index'])->name('jurusan.index');
+Route::get('create-jurusan',[App\Http\Controllers\JurusanController::class, 'create'])->name('jurusan.create');
+Route::post('store-jurusan',[App\Http\Controllers\JurusanController::class, 'store'])->name('jurusan.store');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
