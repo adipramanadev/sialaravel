@@ -51,14 +51,22 @@ class JurusanController extends Controller
     public function edit($id)
     {
         //
+        $jurusan = Jurusan::find($id);
+        return view('jurusan.edit', compact('jurusan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Jurusan $jurusan)
+    public function update(Request $request, $id)
     {
         //
+        $jurusan = Jurusan::find($id);
+        $jurusan->namajurusan= $request->namajurusan;
+        $jurusan->keterangan = $request->keterangan;
+        $jurusan->save();
+
+        return redirect()->route('jurusan.index');
     }
 
     /**
