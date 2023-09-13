@@ -48,24 +48,35 @@ class JurusanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Jurusan $jurusan)
+    public function edit($id)
     {
         //
+        $jurusan = Jurusan::find($id);
+        return view('jurusan.edit', compact('jurusan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Jurusan $jurusan)
+    public function update(Request $request, $id)
     {
         //
+        $jurusan = Jurusan::find($id);
+        $jurusan->namajurusan= $request->namajurusan;
+        $jurusan->keterangan = $request->keterangan;
+        $jurusan->save();
+
+        return redirect()->route('jurusan.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Jurusan $jurusan)
+    public function destroy($id)
     {
-        //
+        //delete
+        $jurusan = Jurusan::find($id);
+        $jurusan->delete();
+        return redirect()->route('jurusan.index');
     }
 }
