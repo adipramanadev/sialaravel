@@ -13,7 +13,7 @@
     <tr>
         @forelse ($jurusan as $item)
             <td>{{ $loop->iteration }}</td>
-            <td>{{ $item->nama_jurusan }}</td>
+            <td>{{ $item->namajurusan }}</td>
             <td>{{ $item->keterangan }}</td>
             <td>#</td>
         @empty
